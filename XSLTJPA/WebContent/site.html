@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>
+	$(function(){
+			//removeSite();
+			updateSite();
+	}
+	);
+	
+	
+	
+	function createSite(){
+		var site = {
+			name: "site4",
+			latitude: "23.46",
+			longitude: "56.70"
+		}
+		$.ajax(
+				{
+					url: "api/site",
+					data: JSON.stringify(site),
+					type: "post",
+					dataType: "json",
+					contentType: "application/json",
+					success: function(response) {
+						console.log(response);
+					},
+					error: function(response) {
+						console.log(response);
+					}
+				}
+				);
+	}
+	
+	function updateSite(){
+		var site = {
+				name: "site4",
+				latitude: "22.22",
+				longitude: "11.11"
+		}
+		$.ajax(
+				{
+					url: "api/site/5",
+					data: JSON.stringify(site),
+					type: "put",
+					dataType: "json",
+					contentType: "application/json",
+					success: function(response) {
+						console.log(response);
+					},
+					error: function(response) {
+						console.log(response);
+					}
+				}
+				);
+	}
+	
+	function removeSite(){
+		$.ajax(
+				{
+					url: "api/site/4",
+					type: "delete",
+					dataType: "json",
+					contentType: "application/json",
+					success: function(response) {
+						console.log(response);
+					},
+					error: function(response) {
+						console.log(response);
+					}
+				}
+				);
+	}
+	</script>
+	
+</head>
+<body>
+<a href="api/site">Find All Directors</a>
+<br/>
+<a href="api/site/1">Find Director with ID = 1</a>
+<br/>
+<a href="api/site/2">Find Director with ID = 2</a>
+</body>
+</html>
