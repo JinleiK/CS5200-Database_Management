@@ -12,8 +12,8 @@ import org.w3c.dom.*;
 import model.*;
 
 public class AmazonService {
-	private static final String AWS_ACCESS_KEY_ID = "AKIAIKVZEZBJ4DS4LRDA";
-	private static final String AWS_SECRET_KEY = "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";
+	private static final String AWS_ACCESS_KEY_ID = "AWS_ACCESS_KEY_ID";
+	private static final String AWS_SECRET_KEY = "AWS_SECRET_KEY";
 	private static final String ENDPOINT = "ecs.amazonaws.com";
 	
 	private SignedRequestsHelper helper;
